@@ -1,15 +1,12 @@
 import { Box, AppBar, Toolbar, MenuItem, Typography, Avatar } from '@mui/material';
 
-import Image from '../../../public/imagenPerfil.jpeg';
+import Image from '../../img/imagenPerfil.jpeg';
 
-const linkBar:string[] = [ 'Experience', 'Projects' ];
+const linkBar:string[] = [ 'About Me', 'Technologies', 'Experience', 'Projects' ];
 
 const renderOptionBar = (
   linkBar.map( links => (
-    <MenuItem 
-      sx={{ 
-        
-      }}
+    <MenuItem
       key={links} 
     >
       <Typography>{links}</Typography>

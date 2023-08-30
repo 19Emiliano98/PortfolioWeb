@@ -1,19 +1,15 @@
-import { Box, Typography } from '@mui/material';
+import AboutMe from './AboutMe';
+import CloudDecoration from './CloudDecoration';
+
+import { Box } from '@mui/material';
 
 const HomeSection = () => {
   return (
     <>
-      <Box
-        sx={{
-          mt: '6%', ml: '22.5%'
-        }}
-        >
-        <Typography sx={{ color: 'white', mt: 2.5 }} variant='body1'>Hi, my name is</Typography>
-
-        <Typography sx={{ color: 'white', mt: 2.5 }} variant='h1'>Emiliano Caballero</Typography>
-
-        <Typography sx={{ color: 'white', mt: 2.5 }} variant='h1'>I'm a FullStack Developer</Typography>
+      <Box sx={{ color: '#B7C0DA', mt: '6%', ml: '28%' }}>
+        <AboutMe />
       </Box>
+      <CloudDecoration />
     </>
   )
 }
