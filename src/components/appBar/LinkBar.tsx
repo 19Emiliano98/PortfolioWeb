@@ -1,15 +1,24 @@
-import { Box, AppBar, Toolbar, MenuItem, Typography, Avatar } from '@mui/material';
+import Link from '@mui/material/Link/Link';
 
+import { Box, AppBar, Toolbar, MenuItem, Avatar } from '@mui/material';
 import Image from '../../img/imagenPerfil.jpeg';
 
-const linkBar:string[] = [ 'About Me', 'Technologies', 'Experience', 'Projects' ];
+interface linkBarProp {
+  title: string;
+  dominion: string;
+}
+
+const linkBar:linkBarProp[] = [ 
+  { title:'About Me' , dominion: 'aboutme' }, 
+  {title: 'Technologies' , dominion: 'technologies' }, 
+  {title: 'Experience' , dominion: 'experience' }, 
+  {title: 'Projects' , dominion: 'projects' } 
+];
 
 const renderOptionBar = (
   linkBar.map( links => (
-    <MenuItem
-      key={links} 
-    >
-      <Typography>{links}</Typography>
+    <MenuItem key={links.title}>
+      <Link sx={{ textDecoration: 'none', color: 'white' }} href={ `http://localhost:5173/${links.dominion}` }>{links.title}</Link>
     </MenuItem>
   ))
 );
