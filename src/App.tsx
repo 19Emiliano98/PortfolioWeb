@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LinkBar from './components/appBar/LinkBar.tsx';
 import HomeSection from './components/home/HomeSection.tsx';
 import TechSection from "./components/technologies/TechSection.tsx";
+import ExperienceSection from "./components/experience/ExperienceSection.tsx";
 import Contact from './components/contact/Contact.tsx';
 
 import { Box } from '@mui/material';
@@ -15,6 +16,8 @@ function App() {
 				<Routes>
 					<Route path="/aboutme" element={<HomeSection />}/>
           <Route path="/technologies" element={<TechSection />}/>
+          <Route path="/experience" element={<ExperienceSection />}/>
+          {/* <Route path="/projects" element={<TechSection />}/> */}
 					<Route path="*" element={<Navigate to='/aboutme' />}/>
 				</Routes>
 			</BrowserRouter>

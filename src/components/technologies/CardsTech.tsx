@@ -41,7 +41,7 @@ export default function CardsTech() {
         }}
       >
         <Typography sx={{ textAlign: 'center', fontWeight: 700, fontSize: '35px', mb: 3 }} variant='h2'>
-          Lenguages
+          Languages
         </Typography>
         
         <Box sx={{ display: 'flex', }}>

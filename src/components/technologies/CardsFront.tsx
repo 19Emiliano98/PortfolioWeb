@@ -1,4 +1,4 @@
-import htmlLogo from '../../img/lenguages/Frontend/htmlLogo.png';
+import htmlLogo from '../../img/lenguages/Frontend/htmlLogo.jfif';
 import cssLogo from '../../img/lenguages/Frontend/cssLogo.png';
 import reactLogo from '../../img/lenguages/Frontend/reactLogo.png';
 import materialLogo from '../../img/lenguages/Frontend/materialLogo.png';
@@ -28,7 +28,7 @@ const renderLenguageImage = (
       component="img"
       image={ image.logo }
       alt={ image.alt }
-      sx={{ width: '80px', height: '80px', borderRadius: '17px', m: '8px 10px' }}
+      sx={{ width: '95px', height: '95px', borderRadius: '17px', m: '8px 10px' }}
     />
   ))
 )
@@ -39,7 +39,7 @@ const CardsFront = () => {
       sx={{ 
         width: 300, height: 430, 
         backgroundColor: '#B7C0DA', borderRadius: '18px',
-        mt: 3
+        mt: 3, mr: 7
       }}
     >
       <CardContent 

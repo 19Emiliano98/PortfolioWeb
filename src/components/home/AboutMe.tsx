@@ -10,9 +10,9 @@ const AboutMe = () => {
       <Typography sx={{ mt: 1, ml: 0.2 }} variant='h2'>I'm a FullStack Developer</Typography>
 
       <Typography sx={{ fontSize: '17px', mt: 3, ml: 0.7 }} variant='body2'>
-        I'm a FullStack Developer specializing in develop of diferent web pages in the FrontEnd <br />
-        with React.js and I builded API rest whit Node.js / Express.js.<br /> Currently, I always
-        focused on the side Frontend from my experience but i love Backend side
+          Specializing in develop of diferent web pages in the FrontEnd
+        with React.js and<br /> I builded API rest whit Node.js / Express.js. Currently, I always
+        focused on the side <br />Frontend from my experience but i love Backend side
       </Typography>
     </>
   )
