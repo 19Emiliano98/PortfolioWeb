@@ -9,7 +9,7 @@ const TechSection = () => {
     <Box
       sx={{
         display: 'flex', flexDirection: 'column', 
-        alignItems: 'center', mt: 4
+        alignItems: 'center', pt: 13
       }}
     >
       <CardsTech />

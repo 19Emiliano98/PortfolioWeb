@@ -26,7 +26,7 @@ const renderOptionBar = (
 function LinkBar() {
   return (
     <Box>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar 
           sx={{ 
             display: 'flex', justifyContent: 'flex-end', alignItems: 'center',

@@ -11,7 +11,7 @@ import { Box } from '@mui/material';
 
 function App() {
   return (
-    <Box sx={{ backgroundColor: '#171624', height: '100vh', m: -1}}>
+    <Box sx={{ backgroundColor: '#171624', minHeight: '100vh', m: -1}}>
       <LinkBar />
       <BrowserRouter>
 				<Routes>
@@ -22,7 +22,7 @@ function App() {
 					<Route path="*" element={<Navigate to='/aboutme' />}/>
 				</Routes>
 			</BrowserRouter>
-      <Box sx={{ position: 'absolute', top: '44%', left: '2%' }}>
+      <Box sx={{ position: 'fixed', top: '44%', left: '2%' }}>
         <Contact />
       </Box>
     </Box>

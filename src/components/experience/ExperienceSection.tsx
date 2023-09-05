@@ -103,7 +103,7 @@ const renderList = (
 
 const ExperienceSection = () => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 10 }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: 22 }}>
       { renderList }
     </Box>
   )
