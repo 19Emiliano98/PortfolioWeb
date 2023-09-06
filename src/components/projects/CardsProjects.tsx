@@ -1,7 +1,7 @@
 import CarouselImg from "./CarouselImg";
 
 import { 
-  Card, CardContent, CardHeader, Typography
+  Card, CardContent, CardHeader, Typography, Link
 } from '@mui/material';
 
 import { desusWebImages, dMartinaImages } from "./imagesLoader";
@@ -32,7 +32,7 @@ const renderCard = (
   <Card
     sx={{
       backgroundColor: '#B7C0DA', borderRadius: '30px',
-      width: 730, height: 700, m: '1.5% 7% 2% 0%'
+      width: 730, height: 660, m: '1.5% 7% 2% 0%'
     }}
   >
     <CardHeader
@@ -44,11 +44,11 @@ const renderCard = (
       <CarouselImg props={x.imgCarousel}/>
       <Typography 
         sx={{ 
-          fontFamily: "Segoe UI", fontSize: '20px', fontWeight: 600 
+          fontFamily: "Segoe UI", fontSize: '20px', fontWeight: 600 , textAlign: 'center'
         }} 
         variant='body1'
       >
-        Link to Page: { x.linkTo }
+        Link to Page: <Link href="#" underline="hover"> { x.linkTo } </Link>
       </Typography>
     </CardContent>
   </Card>

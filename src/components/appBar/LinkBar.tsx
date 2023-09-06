@@ -1,6 +1,6 @@
 import Link from '@mui/material/Link/Link';
 
-import { Box, AppBar, Toolbar, MenuItem, Avatar } from '@mui/material';
+import { Box, Toolbar, MenuItem, Avatar } from '@mui/material';
 import Image from '../../img/imagenPerfil.jpeg';
 
 interface linkBarProp {
@@ -26,28 +26,26 @@ const renderOptionBar = (
 function LinkBar() {
   return (
     <Box>
-      <AppBar position="fixed">
-        <Toolbar 
-          sx={{ 
-            display: 'flex', justifyContent: 'flex-end', alignItems: 'center',
-            backgroundColor: '#171624',
+      <Toolbar 
+        sx={{ 
+          display: 'flex', justifyContent: 'flex-end', alignItems: 'center',
+          position: 'fixed', backgroundColor: '#171624', minWidth: '98vw', boxShadow: '0px 5px 35px rgba(0, 0, 0, 0.5)'
+        }}
+      >
+        <Avatar 
+          sx={{
+            position: 'absolute',
+            width: { xl: '160px', lg: '140px'},
+            height: { xl: '160px', lg: '140px'},
+            border: '2px solid #171624',
+            boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)',
+            mr: { lg: '85%' }, mt: '6%'
           }}
-        >
-          <Avatar 
-            sx={{
-              position: 'absolute',
-              width: '160px',
-              height: '160px',
-              border: '2px solid #171624',
-              boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)',
-              mr: '86%', mt: '6%'
-            }}
-            alt="Imagen Perfil" 
-            src={Image} 
-          />
-          { renderOptionBar }
-        </Toolbar>
-      </AppBar>
+          alt="Imagen Perfil" 
+          src={Image} 
+        />
+        { renderOptionBar }
+      </Toolbar>
     </Box>
   )
 }
