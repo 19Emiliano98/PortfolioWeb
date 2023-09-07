@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 
 const ProjectsSection = () => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: 8, ml: 12 }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: { sm: 8, xs: 22 }, ml: 12 }}>
       <CardsProjects />
     </Box>
   )

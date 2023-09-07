@@ -27,24 +27,27 @@ const structure:structureProps[] = [
   }
 ]
 
+let anchoPantalla = window.innerWidth;
+
 const renderCard = (
-  structure.map(x => (
+  structure.map(( x, index ) => (
   <Card
+    key={index}
     sx={{
       backgroundColor: '#B7C0DA', borderRadius: '30px',
-      width: 730, height: 660, m: '1.5% 7% 2% 0%'
+      width: {md: 730, sm: 550, xs: 300 }, height: { md: 660, sm: 564, xs: 429 }, m: { sm: '1.5% 7% 2% 0%', xs: '1.5% 20% 8% 0%'}
     }}
   >
     <CardHeader
       title= { x.title}
       subheader= { x.subheader }
-      sx={{ m: '10px 0px 0px 30px' }}
+      sx={{ m: { sm: '10px 0px 0px 30px', xs: '3px 0px 0px 0px' } }}
     />
     <CardContent sx={{ m: '-10px 0px 0px 0px' }}>
-      <CarouselImg props={x.imgCarousel}/>
+      <CarouselImg props={x.imgCarousel} responsive={anchoPantalla}/>
       <Typography 
         sx={{ 
-          fontFamily: "Segoe UI", fontSize: '20px', fontWeight: 600 , textAlign: 'center'
+          fontFamily: "Segoe UI", fontSize: { md: '20px', xs: '17px'}, fontWeight: 600 , textAlign: 'center'
         }} 
         variant='body1'
       >

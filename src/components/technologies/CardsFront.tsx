@@ -37,9 +37,9 @@ const CardsFront = () => {
   return (
     <Card 
       sx={{ 
-        width: 300, height: 430, 
+        width: { sm: 300, xs: 280 }, height: 430, 
         backgroundColor: '#B7C0DA', borderRadius: '18px',
-        mt: 3, mr: 7
+        mr: { md: 5, sm: -4 }
       }}
     >
       <CardContent 

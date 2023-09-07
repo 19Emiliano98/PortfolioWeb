@@ -22,7 +22,7 @@ function App() {
 					<Route path="*" element={<Navigate to='/aboutme' />}/>
 				</Routes>
 			</BrowserRouter>
-      <Box sx={{ position: 'fixed', top: { lg: '44%' }, left: '2%' }}>
+      <Box sx={{ position: 'fixed', top: '44%', left: '2%' }}>
         <Contact />
       </Box>
     </Box>

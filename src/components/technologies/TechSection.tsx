@@ -9,13 +9,13 @@ const TechSection = () => {
     <Box
       sx={{
         display: 'flex', flexDirection: 'column', 
-        alignItems: 'center', pt: 13
+        alignItems: 'center', pt: 19, ml: { lg: 2, md: 6, sm: 8, xs: 5 }
       }}
     >
       <CardsTech />
       <Box
         sx={{
-          display: 'flex', mt: 4
+          display: 'flex', flexDirection: { sm: 'row', xs: 'column' }, mt: { sm: 5, xs: 2 }
         }}
       >
         <CardsFront />

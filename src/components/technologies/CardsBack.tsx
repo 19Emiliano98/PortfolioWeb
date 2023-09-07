@@ -30,9 +30,9 @@ const CardsBack = () => {
   return (
     <Card 
       sx={{ 
-        width: 300, height: 430, 
+        width: { sm: 300, xs: 280 }, height: 430, 
         backgroundColor: '#B7C0DA', borderRadius: '18px',
-        mt: 3, ml: 7
+        ml: { sm: 7, xs: 0}, mt: { sm: 0, xs: 2 }, mb: { sm: 0, xs: 5 }
       }}
     >
       <CardContent 

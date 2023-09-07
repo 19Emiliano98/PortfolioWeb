@@ -29,9 +29,9 @@ export default function CardsTech() {
   return (
     <Card 
       sx={{ 
-        width: 400, height: 210, 
+        width: { md: 400, xs: 280 }, minHeight: { sm: 200, xs: 190}, 
         backgroundColor: '#B7C0DA', borderRadius: '18px',
-        mt: 3 
+        mt: 3
       }}
     >
       <CardContent 
