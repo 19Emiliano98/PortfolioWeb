@@ -7,7 +7,6 @@ interface linkBarProp {
   title: string;
   dominion: string;
 }
-
 const linkBar:linkBarProp[] = [ 
   { title:'About Me' , dominion: 'aboutme' }, 
   {title: 'Technologies' , dominion: 'technologies' }, 
