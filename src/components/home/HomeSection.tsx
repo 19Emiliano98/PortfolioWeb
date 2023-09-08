@@ -9,8 +9,8 @@ const HomeSection = () => {
       <Box 
         sx={{
           color: '#B7C0DA',
-          ml: { xl: '29.4%', lg: '24%', md: '13%', sm: '14.3%' }, 
-          pt: { lg: 27, md: 33, sm: 35.4 }, mb: { xl: -4, lg: -9, sm: 0 }
+          ml: { xl: '29.4%', lg: '24%', md: '13%', sm: '14.3%', xs: '17%' }, 
+          pt: { lg: 27, md: 33, sm: 35.4, xs: 27 }, mb: { xl: -4, lg: -9, md: 0, sm: -4.7, xs: 9.2 }
         }}
       >
         <AboutMe />
