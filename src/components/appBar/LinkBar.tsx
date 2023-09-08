@@ -17,7 +17,7 @@ const linkBar:linkBarProp[] = [
 const renderOptionBar = (
   linkBar.map( links => (
     <MenuItem key={links.title}>
-      <Link sx={{ textDecoration: 'none', color: 'white', fontSize: { md: '22px', sm: '15px', xs: '13px' }, ml: { md: 0, xs: -2.3} }} href={ `http://localhost:5173/${links.dominion}` }>{links.title}</Link>
+      <Link sx={{ textDecoration: 'none', color: 'white', fontSize: { md: '22px', sm: '15px', xs: '13px' }, ml: { md: 0, xs: -2.3} }} href={ `/${links.dominion}` }>{links.title}</Link>
     </MenuItem>
   ))
 );
