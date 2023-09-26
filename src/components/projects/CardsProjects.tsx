@@ -51,7 +51,7 @@ const renderCard = (
         }} 
         variant='body1'
       >
-        Link to Page: <Link href="#" underline="hover"> { x.linkTo } </Link>
+        Link to Page: <Link href={ x.linkTo } underline="hover"> { x.linkTo } </Link>
       </Typography>
     </CardContent>
   </Card>
