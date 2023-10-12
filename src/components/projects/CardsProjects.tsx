@@ -1,10 +1,10 @@
 import CarouselImg from "./CarouselImg";
 
 import { 
-  Card, CardContent, CardHeader, Typography, Link
+  Card, CardContent, CardHeader, Typography, Link, Box
 } from '@mui/material';
 
-import { desusWebImages, dMartinaImages } from "./imagesLoader";
+import { desusWebImages, dMartinaImages, imageUploaderChallengue } from "./imagesLoader";
 interface structureProps{
   title: string;
   subheader: string;
@@ -24,6 +24,12 @@ const structure:structureProps[] = [
     subheader: 'E-commerce - FrontEnd',
     imgCarousel: dMartinaImages,
     linkTo: 'https://d-martina-practice.netlify.app/inicio'
+  },
+  {
+    title: 'Image Uploader Challengue',
+    subheader: 'Web simple',
+    imgCarousel: imageUploaderChallengue,
+    linkTo: 'https://image-challengue-uploader.netlify.app'
   }
 ]
 

@@ -8,7 +8,11 @@ import marti2 from '../../img/projects/Dmartina/marti2.png';
 import marti3 from '../../img/projects/Dmartina/marti3.png';
 import marti4 from '../../img/projects/Dmartina/marti4.png';
 
-const desusWebImages = [ desus1, desus2, desus3, desus4 ];
-const dMartinaImages = [ marti1, marti2, marti3, marti4 ];
+import iamgeUploader1 from '../../img/projects/ImageUploaderChallengue/UploadImage.png';
+import iamgeUploader2 from '../../img/projects/ImageUploaderChallengue/ImageUploaded.png';
 
-export { desusWebImages, dMartinaImages };
+const desusWebImages: string[] = [ desus1, desus2, desus3, desus4 ];
+const dMartinaImages: string[] = [ marti1, marti2, marti3, marti4 ];
+const imageUploaderChallengue: string[] = [ iamgeUploader1, iamgeUploader2 ]
+
+export { desusWebImages, dMartinaImages, imageUploaderChallengue };
