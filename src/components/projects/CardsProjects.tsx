@@ -1,7 +1,7 @@
 import CarouselImg from "./CarouselImg";
 
 import { 
-  Card, CardContent, CardHeader, Typography, Link, Box
+  Card, CardContent, CardHeader, Typography, Link
 } from '@mui/material';
 
 import { desusWebImages, dMartinaImages, imageUploaderChallengue } from "./imagesLoader";
