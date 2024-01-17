@@ -1,22 +1,26 @@
-import AboutMe from './AboutMe';
-import CloudDecoration from './CloudDecoration';
+import { Box, Avatar } from '@mui/material';
 
-import { Box } from '@mui/material';
+import AboutMe from './AboutMe';
+
+import Image from '../../img/imagenPerfil.jpeg';
 
 const HomeSection = () => {
   return (
-    <>
-      <Box 
-        sx={{
-          color: '#B7C0DA',
-          ml: { xl: '29.4%', lg: '24%', md: '13%', sm: '14.3%', xs: '17%' }, 
-          pt: { lg: 27, md: 33, sm: 35.4, xs: 27 }, mb: { xl: -4, lg: -9, md: 0, sm: -4.7, xs: 9.2 }
-        }}
-      >
-        <AboutMe />
+      <Box sx={{display: 'flex', justifyContent: 'center' }}>
+        <Box sx={{ mt: { sm: 22, xs: 17 }, ml: { sm: 0, xs: 0.5 } }}>
+          <Avatar 
+            sx={{
+              width: { sm: '70px', xs: '60px' },
+              height: { sm: '70px', xs: '60px' },
+              boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)', mb: 1.6
+            }}
+            alt="Imagen Perfil" 
+            src={Image}
+          />
+
+          <AboutMe />
+        </Box>
       </Box>
-      <CloudDecoration />
-    </>
   )
 }
 

@@ -1,20 +1,22 @@
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import CodeIcon from '@mui/icons-material/Code';
+
+import { TypographyBody, TitularIcons } from '../GlobalStyles';
 
 const AboutMe = () => {
   return (
-    <>
-      <Typography sx={{ ml: 0.8 }} variant='body1'>Hi, my name is</Typography>
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', mb: 2.4 }}>
+        <CodeIcon fontSize='inherit' sx={{ fontSize: TitularIcons.fontSize, mr: 1 }}/>
 
-      <Typography sx={{ mt: 0.9, fontSize: { md: '95px', sm: '68px', xs: '60px' } }} variant='h1'>Emiliano Caballero</Typography>
+        <Typography sx={{ fontSize: { sm: '4rem', xs: '1.9rem' } }} variant='h1'>Emiliano Caballero</Typography>
+      </Box>
 
-      <Typography sx={{ mt: 1, ml: 0.2, fontSize: { md: '60px', sm: '37px', xs: '22px' }}} variant='h2'>I'm a FullStack Developer</Typography>
-
-      <Typography sx={{ fontSize: { md: '17px', sm: '17px', xs: '15px' }, mt: 3, ml: 0.7, width: { md: 700, sm: 540, xs: 270 } }} variant='body2'>
-          Specializing in develop of diferent web pages in the FrontEnd
-        with React.js and I builded API rest whit Node.js / Express.js. Currently, I always
-        focused on the side Frontend from my experience but i love Backend side
+      <Typography sx={{ width: { sm: 560, xs: 310 }, fontSize: TypographyBody.fontSize }} variant='body1'>
+        No soy un robot, soy un desarrollador Fullstack de 25 años
+        apasionado por la programación.
       </Typography>
-    </>
+    </Box>
   )
 }
 

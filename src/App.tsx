@@ -1,32 +1,30 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Box } from '@mui/material'
 
 import LinkBar from './components/appBar/LinkBar.tsx';
 import HomeSection from './components/home/HomeSection.tsx';
-import TechSection from "./components/technologies/TechSection.tsx";
-import ExperienceSection from "./components/experience/ExperienceSection.tsx";
+import SocialSection from './components/social/SocialSection.tsx';
 import ProjectsSection from './components/projects/ProjectsSection.tsx';
-import Contact from './components/contact/Contact.tsx';
+import SkillsSection from './components/skills/SkillsSection.tsx';
+import ContactSection from './components/contact/ContactSection.tsx';
 
-import { Box } from '@mui/material';
+import { ThemeColors } from './components/GlobalStyles.ts';
 
 function App() {
   return (
-    <Box sx={{ backgroundColor: '#171624', minHeight: '100vh', m: -1}}>
+    <Box id='aboutMe' sx={{ backgroundColor: ThemeColors.backgroundColor, minHeight: '100vh', m: -1, color: ThemeColors.fontColor }}>
       <LinkBar />
-      <BrowserRouter>
-				<Routes>
-					<Route path="/aboutme" element={<HomeSection />}/>
-          <Route path="/technologies" element={<TechSection />}/>
-          <Route path="/experience" element={<ExperienceSection />}/>
-          <Route path="/projects" element={<ProjectsSection />}/>
-					<Route path="*" element={<Navigate to='/aboutme' />}/>
-				</Routes>
-			</BrowserRouter>
-      <Box sx={{ position: 'fixed', top: '44%', left: '2%' }}>
-        <Contact />
-      </Box>
+      
+      <HomeSection />
+      
+      <SocialSection />
+      
+      <ProjectsSection />
+
+      <SkillsSection />
+
+      <ContactSection />
     </Box>
   )
 }
 
-export default App;
+export default App

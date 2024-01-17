@@ -1,73 +1,126 @@
-import CarouselImg from "./CarouselImg";
+import { Card, CardMedia, CardContent, Typography, CardActions, Button, Box } from '@mui/material';
 
-import { 
-  Card, CardContent, CardHeader, Typography, Link
-} from '@mui/material';
+import { ThemeColors, TypographyBody, TypographyH5, ButtonStyles } from '../GlobalStyles';
+import LaunchIcon from '@mui/icons-material/Launch';
+import LinkIcon from '@mui/icons-material/Link';
+import desus1 from '../../img/projects/desus1.png';
+import imageUploader from '../../img/projects/ImageUploaderChallengue/UploadImage.png';
+import jsImage from '../../img/lenguages/jsLogo.png';
+import tsImage from '../../img/lenguages/tsLogo.png';
+import reactImage from '../../img/lenguages/Frontend/reactLogo.png';
+import nodeImage from '../../img/lenguages/Backend/nodejsLogo.jpg';
+import materialImage from '../../img/lenguages/Frontend/materialLogo.png';
+import Tags from './Tags';
 
-import { desusWebImages, dMartinaImages, imageUploaderChallengue } from "./imagesLoader";
-interface structureProps{
+interface testing {
   title: string;
-  subheader: string;
-  imgCarousel: string[];
-  linkTo: string;
+  image: string;
+}
+interface CardsDataProps {
+  title: string;
+  paraph: string;
+  protected: boolean;
+  image: string;
+  urlWeb: string;
+  urlCode: string;
+  lenguages: Array<testing>;
 }
 
-const structure:structureProps[] = [
+const CardsData:CardsDataProps[] = [
   {
-    title: 'Desusweb',
-    subheader: 'Landing Page - FrontEnd',
-    imgCarousel: desusWebImages,
-    linkTo: 'https://desusweb-19emiliano98.netlify.app/inicio'
+    title: "Desusweb",
+    paraph: "Pagina web creada para pequeña empresa desarrolladora de software, código oculto por cuestiones de privacidad del cliente.",
+    protected: true,
+    image: desus1,
+    urlWeb: 'https://desusweb-19emiliano98.netlify.app/inicio',
+    urlCode: '',
+    lenguages: [
+      { title: 'Javascript', image: jsImage },
+      { title: 'React.js', image: reactImage },
+      { title: 'Material-UI', image: materialImage }
+    ]
   },
   {
-    title: 'D-Martina',
-    subheader: 'E-commerce - FrontEnd',
-    imgCarousel: dMartinaImages,
-    linkTo: 'https://d-martina-practice.netlify.app/inicio'
-  },
-  {
-    title: 'Image Uploader Challengue',
-    subheader: 'Web simple',
-    imgCarousel: imageUploaderChallengue,
-    linkTo: 'https://image-challengue-uploader.netlify.app'
+    title: "Image Uploader",
+    paraph: "Pagina web de practica donde podemos almacenar imagenes en la nube.",
+    protected: false,
+    image: imageUploader,
+    urlWeb: 'https://image-challengue-uploader.netlify.app/',
+    urlCode: 'https://github.com/19Emiliano98/ImageUploader-Backend.git',
+    lenguages: [
+      { title: 'Typescript', image: tsImage },
+      { title: 'React.js', image: reactImage },
+      { title: 'Material-UI', image: materialImage },
+      { title: 'Node.js', image: nodeImage }
+
+    ]
   }
 ]
 
-let anchoPantalla = window.innerWidth;
-
-const renderCard = (
-  structure.map(( x, index ) => (
-  <Card
-    key={index}
-    sx={{
-      backgroundColor: '#B7C0DA', borderRadius: '30px',
-      width: {md: 730, sm: 550, xs: 300 }, height: { md: 660, sm: 564, xs: 429 }, m: { sm: '1.5% 7% 2% 0%', xs: '1.5% 20% 8% 0%'}
-    }}
-  >
-    <CardHeader
-      title= { x.title}
-      subheader= { x.subheader }
-      sx={{ m: { sm: '10px 0px 0px 30px', xs: '3px 0px 0px 0px' } }}
-    />
-    <CardContent sx={{ m: '-10px 0px 0px 0px' }}>
-      <CarouselImg props={x.imgCarousel} responsive={anchoPantalla}/>
-      <Typography 
+const cardRender = (
+  CardsData.map( x => (
+    <Box key={ x.title } sx={{ display: { sm: 'flex', xs: 'inline' }, justifyContent: 'center', maxWidth: 720, mb: 5 }}>
+      <CardMedia
+        sx={{ width: { sm: 405, xs: 310 }, height: { sm: 290, xs: 200 }, objectFit: 'cover', borderRadius: '15px' }}
+        image= { x.image }
+        title= { x.title }
+      />
+      <Card 
         sx={{ 
-          fontFamily: "Segoe UI", fontSize: { md: '20px', xs: '17px'}, fontWeight: 600 , textAlign: 'center'
-        }} 
-        variant='body1'
+          display: 'flex', 
+          width: { sm: 260, xs: 310 }, height: 290,
+          backgroundColor: ThemeColors.backgroundColor,
+          boxShadow: '0px 0px 0px 0px'
+        }}
       >
-        Link to Page: <Link href={ x.linkTo } underline="hover"> { x.linkTo } </Link>
-      </Typography>
-    </CardContent>
-  </Card>
+        <Box sx={{ height: 290 }}>
+          <CardContent sx={{ width: { sm: 215, xs: 260 }, ml: 1 }}>
+            <Typography sx={{ color: TypographyH5 }} gutterBottom variant="h5" component="div">
+              { x.title }
+            </Typography>
+            <Typography sx={{ color: TypographyBody }} variant="body2">
+              { x.paraph }
+            </Typography>
+
+            <Tags param={ x.lenguages }/>
+          </CardContent>
+          <CardActions sx={{ ml: 2, mt: -1}}>
+            <Button 
+              size="small" 
+              variant="contained"
+              href={ x.urlWeb }
+              sx={{ 
+                textTransform: 'none', 
+                backgroundColor: ButtonStyles
+              }}
+            >
+              Live
+              <LaunchIcon fontSize='medium' sx={{ ml: 0.4 }}/>
+            </Button>
+            <Button
+              size="small" 
+              variant="contained"
+              href={ x.urlCode }
+              disabled={ x.protected ? true : false}
+              sx={{ 
+                textTransform: 'none', 
+                backgroundColor: ButtonStyles
+              }}
+            >
+              Code
+              <LinkIcon fontSize='medium' sx={{ ml: 0.4 }}/>
+            </Button>
+          </CardActions>
+        </Box>
+      </Card>
+    </Box>
   ))
-);
+)
 
 const CardsProjects = () => {
   return (
     <>
-      { renderCard }
+      { cardRender }
     </>
   )
 }

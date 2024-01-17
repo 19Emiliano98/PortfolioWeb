@@ -1,48 +1,51 @@
-import Link from '@mui/material/Link/Link';
+import { Box, Toolbar, MenuItem, Link } from '@mui/material';
 
-import { Box, Toolbar, MenuItem, Avatar } from '@mui/material';
-import Image from '../../img/imagenPerfil.jpeg';
-
-interface linkBarProp {
+interface linkbarProps {
   title: string;
-  dominion: string;
+  goTo: string;
 }
-const linkBar:linkBarProp[] = [ 
-  { title:'About Me' , dominion: 'aboutme' }, 
-  {title: 'Technologies' , dominion: 'technologies' }, 
-  {title: 'Experience' , dominion: 'experience' }, 
-  {title: 'Projects' , dominion: 'projects' } 
+
+const linkBar:linkbarProps[] = [ 
+  { title: 'Sobre Mi', goTo: '#aboutMe' },
+  { title: 'Proyectos', goTo: '#projects' },
+  { title: 'Habilidades', goTo: '#skills' },
+  { title: 'Contacto', goTo: '#contact' }
 ];
 
 const renderOptionBar = (
-  linkBar.map( links => (
-    <MenuItem key={links.title}>
-      <Link sx={{ textDecoration: 'none', color: 'white', fontSize: { md: '22px', sm: '15px', xs: '13px' }, ml: { md: 0, xs: -2.3} }} href={ `${links.dominion}` }>{links.title}</Link>
+  linkBar.map( x => (
+    <MenuItem key={x.title} sx={{ mx: { sm: -0.6, xs: -1.35 } }}>
+      <Link 
+        href={ x.goTo }
+        sx={{
+          textDecoration: 'none', color: '#EFF4FA',
+          fontSize: { sm: '18px', xs: '13px' },
+          ':hover':{
+            color: '#9EEBFF'
+          }
+        }}
+      >
+        {x.title}
+      </Link>
     </MenuItem>
   ))
 );
 
 function LinkBar() {
   return (
-    <Box>
+    <Box 
+      sx={{ 
+        position: 'fixed', 
+        pt: 1.8, left: '50%', 
+        transform: 'translate(-50%, 0%)', zIndex: 1
+      }}
+    >
       <Toolbar 
         sx={{ 
-          display: 'flex', justifyContent: { sm: 'flex-end', xs: 'center' }, alignItems: 'center',
-          position: 'fixed', backgroundColor: '#171624', minWidth: '98vw', boxShadow: '0px 5px 35px rgba(0, 0, 0, 0.5)', zIndex: 1
+          display: 'flex', justifyContent: { sm: 'center', xs: 'center' },
+          width: { sm: 380, xs: 256 }, backgroundColor: '#1F213A', borderRadius: '300px', zIndex: 1
         }}
       >
-        <Avatar 
-          sx={{
-            position: 'absolute',
-            width: { xl: '160px', md: '130px', xs: '105px' },
-            height: { xl: '160px', md: '130px', xs: '105px' },
-            border: '2px solid #171624',
-            boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)',
-            mr: { lg: '85%', md: '83%', sm: '82%' }, mt: { lg: '6%', sm: '8%', xs: '39%' }
-          }}
-          alt="Imagen Perfil" 
-          src={Image} 
-        />
         { renderOptionBar }
       </Toolbar>
     </Box>

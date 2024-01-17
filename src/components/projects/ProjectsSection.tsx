@@ -1,11 +1,20 @@
-import CardsProjects from "./CardsProjects"
+import { Box, Typography } from "@mui/material"
+import WorkIcon from '@mui/icons-material/Work';
 
-import { Box } from '@mui/material';
+import { TitularIcons, TypographyH2 } from "../GlobalStyles";
+import CardsProjects from "./CardsProjects";
 
 const ProjectsSection = () => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: { sm: 8, xs: 22 }, ml: 12 }}>
-      <CardsProjects />
+    <Box id='projects'>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mt: 10 }}>
+        <WorkIcon sx={{ fontSize: TitularIcons.fontSize, mr: 2 }} fontSize="inherit"/>
+        <Typography sx={{ fontSize: TypographyH2.fontSize }} variant="h2">Proyectos</Typography>
+      </Box>
+
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 7 }}>
+        <CardsProjects />
+      </Box>
     </Box>
   )
 }
